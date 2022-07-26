@@ -20,6 +20,7 @@ def create_app(test_config=None):
             FLASK_APP = os.environ.get('FLASK_APP'),
             SECRET_KEY = os.environ.get('SECRET_KEY'),
             FLASK_DEBUG = os.environ.get('FLASK_DEBUG'),
+            FLASK_RUN_HOST = os.environ.get('FLASK_RUN_HOST'),
             JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY'),
             JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours= int(os.environ.get('JWT_ACCESS_TOKEN_EXPIRES'))),
             JWT_REFRESH_TOKEN_EXPIRES = timedelta(days= int(os.environ.get('JWT_REFRESH_TOKEN_EXPIRES')))
