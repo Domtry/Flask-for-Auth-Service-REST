@@ -1,0 +1,18 @@
+version: '3'
+services:
+    web:
+      build: .
+      environment:
+        - FLASK_ENV=development
+        - FLASK_DEBUG=1
+        - FLASK_APP=src
+        - SECRET_KEY=dev
+        - FLASK_RUN_HOST=0.0.0.0
+        - SQLALCHEMY_DATABASE_URI=sqlite:///test.db
+        - JWT_SECRET_KEY=JWT_SECRET_KEY
+        - JWT_ACCESS_TOKEN_EXPIRES=1
+        - JWT_REFRESH_TOKEN_EXPIRES=30
+      ports:
+          - "5000:5000"
+      volumes:
+          - .:/code

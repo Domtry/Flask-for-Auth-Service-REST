@@ -28,8 +28,8 @@ class Tokens(Base):
 class Authenticates(Base):
     __tablename__ = "Authenticates"
     id = Column(Integer, primary_key=True, unique=True)
-    create_at = Column(DateTime, default=datetime.now() , nullable=False)
     status = Column(Boolean, default=True, nullable=False)
     user_id = Column(Integer, ForeignKey("Users.id"), nullable=False)
+    create_at = Column(DateTime, default=datetime.now() , nullable=False)
     tokens = relationship("Tokens")
     
